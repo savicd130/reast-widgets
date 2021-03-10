@@ -5,18 +5,26 @@ const Dropdown = ({ options, selected, onSelectedChange, title }) => {
   const ref = useRef();
 
   useEffect(() => {
-    const onBodyClick = e => {
-      if (ref.current.contains(e.target)) {
+    // const onBodyClick = e => {
+    //   if (ref.current.contains(e.target)) {
+    //     return;
+    //   }
+    //   setOpen(false);
+    // };
+
+    // document.body.addEventListener('click', onBodyClick);
+
+    // return () => {
+    //   document.body.removeEventListener('click', onBodyClick);
+    // };
+    document.body.addEventListener('click', e => {
+      const uiForm = e.target.closest('.dropdown');
+      if (uiForm) {
         return;
+      } else {
+        setOpen(false);
       }
-      setOpen(false);
-    };
-
-    document.body.addEventListener('click', onBodyClick);
-
-    return () => {
-      document.body.removeEventListener('click', onBodyClick);
-    };
+    });
   }, []);
 
   const renderedOptions = options.map(option => {

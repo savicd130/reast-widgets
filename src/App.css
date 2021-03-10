@@ -1,0 +1,12 @@
+.flex {
+  background-color: rgb(170, 162, 162);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.search-item {
+  width: 50%;
+}

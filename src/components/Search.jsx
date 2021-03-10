@@ -56,7 +56,7 @@ const Search = () => {
   });
 
   return (
-    <div>
+    <div className="search-item">
       <div className="ui form">
         <div className="field">
           <label>Input search query</label>
